@@ -15,12 +15,14 @@
 #include "block.h"
 
 
-buffer::buffer (size_t size = 1, BUFFER_TYPE type = FIFO, size_t CPU_power = 1) : 
+buffer::buffer (size_t size = 1, BUFFER_TYPE type = FIFO, size_t CPU_power = 1, size_t betta = 1) : 
 	buffer_size (size),
 	type (type),
 	done_packet (0),
 	//done_weight (0),
-	CPU_power (CPU_power)
+	CPU_power (CPU_power),
+	betta (betta),
+	notpushable (0)
 {
 	//std::cout << "buffer() : done_packet==" << done_packet << std::endl;
 }
@@ -55,13 +57,13 @@ void buffer::add_elem_with_del_max (size_t element)
 {
 	if (!(data.size() < buffer_size))
 		{
-			if (maximum() > element)
+			if ((maximum() / element) > betta)
 			{
 				delete_left_maximum();
 				data.push_back(element);
 			}
 		}
-		else	data.push_back(element);
+	else	data.push_back(element);
 }
 
 void buffer::add_elem (size_t element)
@@ -92,6 +94,11 @@ void buffer::add_elem (size_t element)
 
 void buffer::add_block (const block & b)
 {
+	if (notpushable > 0)
+	{
+		--notpushable;
+		return;
+	}
 	for (std::list<size_t>::const_iterator it = b.data.begin(); it != b.data.end(); ++ it)
 	{
 		add_elem(*it);
@@ -179,6 +186,7 @@ void buffer::cpu_action_allone_extract ()
 	}
 	if (counter == buffer_size)
 	{
+		notpushable = buffer_size;
 		done_packet += buffer_size;
 		data.clear();
 	}

@@ -13,14 +13,18 @@ enum BUFFER_TYPE
 
 class buffer
 {
+public:
 	size_t buffer_size;
 	BUFFER_TYPE type;
 	std::list<size_t> data;
 	size_t done_packet;
 	//size_t done_weight;
 	size_t CPU_power;
+	size_t betta;
+	size_t notpushable;
+
 public:
-	buffer (size_t size, BUFFER_TYPE type, size_t CPU_power);
+	buffer (size_t size, BUFFER_TYPE type, size_t CPU_power, size_t betta);
 	bool is_empty ();
 	size_t maximum ();
 	void delete_left_maximum ();
