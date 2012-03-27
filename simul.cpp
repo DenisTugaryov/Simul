@@ -1,10 +1,15 @@
 #include <iostream>
 
+#include <random>
+#include <tuple>
+#include <fstream>
+#include <string>
+#include <sstream>
+
 #include <boost/random/uniform_01.hpp>
 #include <boost/random/normal_distribution.hpp>
 #include <boost/random/linear_congruential.hpp>
-
-#include <random>
+#include <boost/random/poisson_distribution.hpp>
 
 #include <boost/random/mersenne_twister.hpp>
 #include <boost/random/uniform_int.hpp>
@@ -62,7 +67,10 @@ void work()
 	}
 }
 
-void UniformCompare(size_t buffer_size, size_t CPU_power, size_t betta, size_t iteration_number, size_t max_size_block, size_t max_value_in_block)
+std::tuple<size_t, size_t, size_t, size_t> Test_done_packets ( 
+								DISTRIBUTION_TYPE block_size_distribution, size_t buffer_size, 
+								size_t CPU_power, size_t betta, size_t iteration_number, 
+								size_t max_size_block, size_t max_value_in_block, int lambda = 1)
 {
 	std::random_device rg;
 	boost::mt19937 gen (rg);
@@ -72,12 +80,33 @@ void UniformCompare(size_t buffer_size, size_t CPU_power, size_t betta, size_t i
 	buffer bufNOTPUSH = buffer (buffer_size, NOTPUSH,  CPU_power, betta);
 	buffer bufNOTDEL = buffer (buffer_size, NOTDEL,  CPU_power, betta);
 
+	/* Create generators*/
+	/*Uniform distribution*/
 	boost::uniform_int<> uniform (0, max_size_block);
-	boost::variate_generator<boost::mt19937&, boost::uniform_int<> > gener(gen, uniform);
+ 	boost::variate_generator<boost::mt19937&, boost::uniform_int<> > uniform_gener(gen, uniform);
 
+ 	/*Poisson distribution*/
+ 	boost::poisson_distribution<int> poisson (lambda);
+ 	boost::variate_generator<boost::mt19937&, boost::poisson_distribution<int> > 
+ 																		poisson_gener(gen, poisson);
 	for (int i = 0; i < iteration_number; ++i)
-	{		
-		size_t block_size = gener (max_size_block);
+	{	
+		size_t block_size = 0;
+
+		switch (block_size_distribution)
+	 	{
+			case UNIFORM :
+			{
+				block_size = uniform_gener (max_size_block);
+				break;
+			}
+			case POISSON : 
+			{
+				block_size = poisson_gener();
+				break;
+			}
+		}		
+
 		block new_block = block(block_size, max_value_in_block, UNIFORM);
 
 		// std::cout<< i << ") ";
@@ -93,40 +122,125 @@ void UniformCompare(size_t buffer_size, size_t CPU_power, size_t betta, size_t i
 		// std::cout<< "NOTPUSH done_packet = "; bufNOTPUSH.print();
 		// std::cout<< "NOTDEL done_packet = "; bufNOTDEL.print();
 
-		//std::cout<<std::endl;
+		// std::cout<<std::endl;
 	}
-	// std::cout<< "FIFO done_packet = " << bufFIFO.done_packet << std::endl;
-	// std::cout<< "OPT done_packet = " << bufOPT.done_packet << std::endl;
-	// std::cout<< "NOTPUSH done_packet = " << bufNOTPUSH.done_packet << std::endl;
-	// std::cout<< "NOTDEL done_packet = " << bufNOTDEL.done_packet << std::endl;
-
 	bufFIFO.done_packet += bufFIFO.data.size();
 	bufOPT.done_packet += bufOPT.data.size();
 	bufNOTPUSH.done_packet += bufNOTPUSH.data.size();
 	bufNOTDEL.done_packet += bufNOTDEL.data.size();	
 
-
-	std::cout<< "FIFO done_packet = " << bufFIFO.done_packet << std::endl;
-	std::cout<< "OPT done_packet = " << bufOPT.done_packet << std::endl;
-	std::cout<< "NOTPUSH done_packet = " << bufNOTPUSH.done_packet << std::endl;
-	std::cout<< "NOTDEL done_packet = " << bufNOTDEL.done_packet << std::endl;
+	return std::make_tuple (bufFIFO.done_packet, bufOPT.done_packet, 
+						bufNOTPUSH.done_packet, bufNOTDEL.done_packet );
 }
 
 
-int main()
+void UniformTest ()
 {
+	DISTRIBUTION_TYPE block_size_distribution = UNIFORM;
 	size_t buffer_size = 10;
 	size_t CPU_power = 1;
-	size_t betta = 2;
+	size_t max_value_CPU_power = 10;
+	size_t betta = 1;
+	size_t max_value_betta = 10;
+
+	size_t iteration_number = 3000;
+
+	size_t max_size_block = 5;
+	size_t max_value_in_block = 7;
+
+	size_t done_fifo = 0;
+	size_t done_opt = 0;
+	size_t done_notpush = 0;
+	size_t done_notdel = 0;
+
+	std::ofstream uniform_test ("uniform_test.csv");
+	uniform_test<< "block_size_distribution = " << "UNIFORM" << std::endl;
+	uniform_test<< "buffer_size = " << buffer_size << std::endl;
+	uniform_test<< "max_size_block = " << max_size_block << std::endl;
+	uniform_test<< "iteration_number = " << iteration_number << std::endl;
+	uniform_test<< "CPU_power" << ";" << "Betta" << ";" << "FIFO" << ";" 
+				<< "OPT" << ";" << "NOTPUSH" << ";" << "NOTDEL" << std::endl;
+
+	for (int i = 1; i <= max_value_CPU_power; ++i)
+	{
+		for (int j = 1; j <= max_value_betta; ++j)
+		{
+			std::tuple<size_t, size_t, size_t, size_t> test_tuple = Test_done_packets (
+											block_size_distribution, buffer_size, CPU_power, betta,
+											iteration_number, max_size_block, max_value_in_block);
+
+			std::tie (done_fifo, done_opt, done_notpush, done_notdel) = test_tuple;
+			uniform_test<< CPU_power << ";" <<betta << ";" << done_fifo << ";" 
+						<< done_opt << ";" << done_notpush << ";" << done_notdel << std::endl;
+			
+			++betta;
+		}
+		++CPU_power;
+		betta = 1;
+	}
+}
+
+
+
+void PoissonTest (int max_value_lambda)
+{
+	DISTRIBUTION_TYPE block_size_distribution = POISSON;
+	size_t buffer_size = 10;
+	size_t CPU_power = 1;
+	size_t max_value_CPU_power = 10;
+	size_t betta = 1;
+	size_t max_value_betta = 10;
 
 	size_t iteration_number = 300;
 
 	size_t max_size_block = 5;
 	size_t max_value_in_block = 7;
 
-	
-	UniformCompare(buffer_size, CPU_power, betta, iteration_number, max_size_block, max_value_in_block);
-	//UniformCompare(10, 1, 30000, 5, 7);
+	size_t done_fifo = 0;
+	size_t done_opt = 0;
+	size_t done_notpush = 0;
+	size_t done_notdel = 0;
+
+	for (int lambda = 1; lambda <= max_value_lambda; ++lambda)
+	{
+		std::stringstream ss;
+		ss<< "poisson_test_lambda" << lambda << ".csv";
+
+		std::ofstream poisson_test (ss.str());
+		poisson_test<< "block_size_distribution = " << "POISSON" << std::endl;
+		poisson_test<< "lambda = " << lambda << std::endl;
+		poisson_test<< "buffer_size = " << buffer_size << std::endl;
+		poisson_test<< "iteration_number = " << iteration_number << std::endl;
+		poisson_test<< "CPU_power" << ";" << "Betta" << ";" << "FIFO" << ";" 
+					<< "OPT" << ";" << "NOTPUSH" << ";" << "NOTDEL" << std::endl;
+
+		for (int i = 1; i <= max_value_CPU_power; ++i)
+		{
+			for (int j = 1; j <= max_value_betta; ++j)
+			{
+				std::tuple<size_t, size_t, size_t, size_t> test_tuple = Test_done_packets (
+									block_size_distribution, buffer_size, CPU_power, betta,
+									iteration_number, max_size_block, max_value_in_block, lambda);
+
+				std::tie (done_fifo, done_opt, done_notpush, done_notdel) = test_tuple;
+				poisson_test<< CPU_power << ";" <<betta << ";" << done_fifo << ";" 
+							<< done_opt << ";" << done_notpush << ";" << done_notdel << std::endl;
+				
+				++betta;
+			}
+			++CPU_power;
+			betta = 1;
+		}
+		CPU_power = 1;
+	}
+}
+
+int main()
+{
+
+	//UniformTest ();
+	int max_value_lambda = 5;
+	PoissonTest (max_value_lambda);
 
 	return 0;
 }

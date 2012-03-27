@@ -10,6 +10,7 @@
 #include <boost/random/uniform_01.hpp>
 #include <boost/random/normal_distribution.hpp>
 #include <boost/random/linear_congruential.hpp>
+#include <boost/random/poisson_distribution.hpp>
 
 #include "block.h"
 
@@ -21,9 +22,6 @@ block::block (size_t size = 0, size_t max_value = 1, DISTRIBUTION_TYPE distribut
 	std::random_device rg;
 	boost::mt19937 gen (rg);
 	
-	boost::normal_distribution<double> normal((max_elem / 2), 1);
-	boost::uniform_int<> uniform (1, max_elem);
-
 	switch (distribution)
 	{
 		case CONST :
@@ -34,13 +32,23 @@ block::block (size_t size = 0, size_t max_value = 1, DISTRIBUTION_TYPE distribut
 
 		case UNIFORM :
 		{
+			boost::uniform_int<> uniform (1, max_elem);
 			boost::variate_generator<boost::mt19937&, boost::uniform_int<> > gener(gen, uniform);
 			std::generate_n(std::back_insert_iterator<std::list<size_t> >(data), block_size, gener);
 			break;
 		}
 		case NORMAL :
 		{
+			boost::normal_distribution<double> normal((max_elem / 2), 1);
 			boost::variate_generator<boost::mt19937&, boost::normal_distribution<double> > gener(gen, normal);
+			std::generate_n(std::back_insert_iterator<std::list<size_t> >(data), block_size, gener);
+			break;
+		}
+		case POISSON :
+		{
+			const int lambda = 1;
+			boost::poisson_distribution<int> poisson (lambda);
+ 			boost::variate_generator<boost::mt19937&, boost::poisson_distribution<int> > gener(gen, poisson);
 			std::generate_n(std::back_insert_iterator<std::list<size_t> >(data), block_size, gener);
 			break;
 		}

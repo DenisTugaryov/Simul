@@ -7,7 +7,8 @@ enum DISTRIBUTION_TYPE
 {
 	CONST,
 	UNIFORM,
-	NORMAL
+	NORMAL,
+	POISSON
 };
 
 class block

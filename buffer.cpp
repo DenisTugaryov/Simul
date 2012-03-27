@@ -1,15 +1,7 @@
 #include <iostream>
-#include <algorithm>
-#include <iterator>
-#include <random>
+// #include <algorithm>
+// #include <iterator>
 
-#include <boost/random/mersenne_twister.hpp>
-#include <boost/random/uniform_int.hpp>
-#include <boost/random/variate_generator.hpp>
-
-#include <boost/random/uniform_01.hpp>
-#include <boost/random/normal_distribution.hpp>
-#include <boost/random/linear_congruential.hpp>
 
 #include "buffer.h"
 #include "block.h"
@@ -22,7 +14,7 @@ buffer::buffer (size_t size = 1, BUFFER_TYPE type = FIFO, size_t CPU_power = 1, 
 	//done_weight (0),
 	CPU_power (CPU_power),
 	betta (betta),
-	notpushable (0)
+	deletable (0)
 {
 	//std::cout << "buffer() : done_packet==" << done_packet << std::endl;
 }
@@ -94,11 +86,6 @@ void buffer::add_elem (size_t element)
 
 void buffer::add_block (const block & b)
 {
-	if (notpushable > 0)
-	{
-		--notpushable;
-		return;
-	}
 	for (std::list<size_t>::const_iterator it = b.data.begin(); it != b.data.end(); ++ it)
 	{
 		add_elem(*it);
@@ -151,7 +138,7 @@ void buffer::cpu_action ()
 void buffer::cpu_action_frontone_extract ()
 {
 	size_t power = CPU_power;
-	for (std::list<size_t>::iterator it = data.begin(); (it != data.end()) && (power != 0); ++it)
+	for (std::list<size_t>::iterator it = data.begin(); (it != data.end()) && (power > 0); /*++it*/)
 	{
 		if (*it == 1)
 		{
@@ -160,12 +147,15 @@ void buffer::cpu_action_frontone_extract ()
 				data.pop_front();
 				++done_packet;
 				--power;
+				it = data.begin();
 			}
+			else ++it;
 		}
 		else
 		{
 			--*it;
 			--power;
+			++it;
 		}
 	}
 }
@@ -174,20 +164,41 @@ void buffer::cpu_action_allone_extract ()
 {
 	size_t power = CPU_power;
 	size_t counter = 0;
-	for (std::list<size_t>::iterator it = data.begin(); (it != data.end()) && (power != 0); ++it)
+	if (deletable <= 0)
+	{
+		helper (counter, power);
+		if (counter == buffer_size)
+		{
+			deletable = buffer_size;
+		}
+	}
+	if (deletable > 0)
+	{
+		for (std::list<size_t>::iterator it = data.begin(); (it != data.end()) && (deletable > 0) && (power > 0); /*++it*/)
+		{
+			data.pop_front();
+			++done_packet;
+			--deletable;
+			--power;
+			it = data.begin();
+		}
+		helper (counter, power);		
+	}
+}
+
+void buffer::helper(size_t & ones_counter, size_t & power)
+{
+	ones_counter = 0;
+	for (std::list<size_t>::iterator it = data.begin(); (it != data.end()) && (power > 0); ++it)
 	{
 		if (*it == 1) 
-			++counter;
+			++ones_counter;
 		else
 		{
 			--*it;
 			--power;
+			if (*it == 1) 
+			++ones_counter;
 		}
-	}
-	if (counter == buffer_size)
-	{
-		notpushable = buffer_size;
-		done_packet += buffer_size;
-		data.clear();
 	}
 }
