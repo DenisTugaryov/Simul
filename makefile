@@ -1,5 +1,5 @@
 all: simul
-	./simul
+		./simul
 
 simul: simul.o block.o buffer.o
 	g++ simul.o block.o buffer.o -o simul

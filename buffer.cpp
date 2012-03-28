@@ -75,7 +75,6 @@ void buffer::add_elem (size_t element)
 		{
 			if (data.size() < buffer_size)
 				data.push_back(element);
-			else buffer_size = 0;
 			break;
 		}
 	}

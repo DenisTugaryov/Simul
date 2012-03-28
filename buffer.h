@@ -16,7 +16,7 @@ enum BUFFER_TYPE
 class buffer
 {
 public:
-	size_t buffer_size;
+	const size_t buffer_size;
 	const BUFFER_TYPE type;
 	std::list<size_t> data;
 	size_t done_packet;

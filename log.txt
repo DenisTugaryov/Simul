@@ -1,0 +1,814 @@
+BETTA = 5
+0) block: 7 1 3 6 
+FIFO done_packet = buffer: 7 1 3 6 
+data.size(): 4;  buffer_size: 10; done_packet: 0
+OPT done_packet = buffer: 1 3 6 7 
+data.size(): 4;  buffer_size: 10; done_packet: 0
+
+
+BETTA = 5
+1) block: 1 6 4 6 5 6 
+FIFO done_packet = buffer: 6 1 3 6 1 6 4 6 5 6 
+data.size(): 10;  buffer_size: 10; done_packet: 0
+OPT done_packet = buffer: 1 3 4 5 6 6 6 6 7 
+data.size(): 9;  buffer_size: 10; done_packet: 1
+
+
+BETTA = 5
+2) block: 6 3 2 5 
+FIFO done_packet = buffer: 5 1 3 6 1 6 4 6 5 6 
+data.size(): 10;  buffer_size: 10; done_packet: 0
+OPT done_packet = buffer: 3 3 4 5 6 6 6 6 6 7 
+data.size(): 10;  buffer_size: 10; done_packet: 2
+
+
+BETTA = 5
+3) block: 5 7 4 7 3 
+FIFO done_packet = buffer: 4 1 3 6 1 6 4 6 5 6 
+data.size(): 10;  buffer_size: 10; done_packet: 0
+OPT done_packet = buffer: 2 3 4 5 6 6 6 6 6 7 
+data.size(): 10;  buffer_size: 10; done_packet: 2
+
+
+BETTA = 5
+4) block: 6 5 
+FIFO done_packet = buffer: 3 1 3 6 1 6 4 6 5 6 
+data.size(): 10;  buffer_size: 10; done_packet: 0
+OPT done_packet = buffer: 1 3 4 5 6 6 6 6 6 7 
+data.size(): 10;  buffer_size: 10; done_packet: 2
+
+
+BETTA = 5
+5) block: 5 3 1 4 2 
+FIFO done_packet = buffer: 2 1 3 1 6 4 6 5 6 1 
+data.size(): 10;  buffer_size: 10; done_packet: 0
+OPT done_packet = buffer: 1 3 4 5 5 6 6 6 6 6 
+data.size(): 10;  buffer_size: 10; done_packet: 3
+
+
+BETTA = 5
+6) block: 5 6 
+FIFO done_packet = buffer: 1 1 3 1 6 4 6 5 6 1 
+data.size(): 10;  buffer_size: 10; done_packet: 0
+OPT done_packet = buffer: 3 4 5 5 5 6 6 6 6 6 
+data.size(): 10;  buffer_size: 10; done_packet: 4
+
+
+BETTA = 5
+7) block: 1 4 3 
+FIFO done_packet = buffer: 1 3 1 6 4 6 5 6 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 1
+OPT done_packet = buffer: 1 2 4 5 5 5 6 6 6 6 
+data.size(): 10;  buffer_size: 10; done_packet: 4
+
+
+BETTA = 5
+8) block: 1 6 7 7 7 6 
+FIFO done_packet = buffer: 3 1 6 4 6 5 6 1 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 2
+OPT done_packet = buffer: 1 2 4 5 5 5 6 6 6 6 
+data.size(): 10;  buffer_size: 10; done_packet: 5
+
+
+BETTA = 5
+9) block: 4 2 
+FIFO done_packet = buffer: 2 1 6 4 6 5 6 1 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 2
+OPT done_packet = buffer: 2 4 4 5 5 5 6 6 6 6 
+data.size(): 10;  buffer_size: 10; done_packet: 6
+
+
+BETTA = 5
+10) block: 1 1 2 1 4 
+FIFO done_packet = buffer: 1 1 4 5 1 1 1 1 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 2
+OPT done_packet = buffer: 1 1 1 1 4 4 5 5 5 6 
+data.size(): 10;  buffer_size: 10; done_packet: 6
+
+
+BETTA = 5
+11) block: 4 2 
+FIFO done_packet = buffer: 1 4 5 1 1 1 1 1 1 4 
+data.size(): 10;  buffer_size: 10; done_packet: 3
+OPT done_packet = buffer: 1 1 1 4 4 4 5 5 5 6 
+data.size(): 10;  buffer_size: 10; done_packet: 7
+
+
+BETTA = 5
+12) block: 1 5 4 2 1 
+FIFO done_packet = buffer: 4 5 1 1 1 1 1 1 4 1 
+data.size(): 10;  buffer_size: 10; done_packet: 4
+OPT done_packet = buffer: 1 1 1 1 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 8
+
+
+BETTA = 5
+13) block: 6 6 3 7 
+FIFO done_packet = buffer: 3 5 1 1 1 1 1 1 4 1 
+data.size(): 10;  buffer_size: 10; done_packet: 4
+OPT done_packet = buffer: 1 1 1 4 4 4 5 5 5 6 
+data.size(): 10;  buffer_size: 10; done_packet: 9
+
+
+BETTA = 5
+14) block: 2 1 
+FIFO done_packet = buffer: 2 5 1 1 1 1 1 1 4 1 
+data.size(): 10;  buffer_size: 10; done_packet: 4
+OPT done_packet = buffer: 1 1 1 2 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 10
+
+
+BETTA = 5
+15) block: 4 4 7 4 1 5 7 2 
+FIFO done_packet = buffer: 1 5 1 1 1 1 1 1 4 1 
+data.size(): 10;  buffer_size: 10; done_packet: 4
+OPT done_packet = buffer: 1 1 2 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 11
+
+
+BETTA = 5
+16) block: 1 5 6 7 2 1 
+FIFO done_packet = buffer: 5 1 1 1 1 1 1 4 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 5
+OPT done_packet = buffer: 1 1 2 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 12
+
+
+BETTA = 5
+17) block: 4 7 3 5 6 2 4 6 
+FIFO done_packet = buffer: 4 1 1 1 1 1 1 4 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 5
+OPT done_packet = buffer: 1 2 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 13
+
+
+BETTA = 5
+18) block: 3 6 5 2 
+FIFO done_packet = buffer: 3 1 1 1 1 1 1 4 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 5
+OPT done_packet = buffer: 2 3 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 14
+
+
+BETTA = 5
+19) block: 5 7 5 2 3 7 
+FIFO done_packet = buffer: 2 1 1 1 1 1 1 4 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 5
+OPT done_packet = buffer: 1 3 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 14
+
+
+BETTA = 5
+20) block: 1 2 1 6 5 7 
+FIFO done_packet = buffer: 1 1 1 1 1 1 1 4 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 5
+OPT done_packet = buffer: 1 3 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 15
+
+
+BETTA = 5
+21) block: 6 4 6 6 4 
+FIFO done_packet = buffer: 1 1 1 1 1 1 4 1 1 6 
+data.size(): 10;  buffer_size: 10; done_packet: 6
+OPT done_packet = buffer: 3 4 4 4 4 4 5 5 5 6 
+data.size(): 10;  buffer_size: 10; done_packet: 16
+
+
+BETTA = 5
+22) block: 3 3 1 6 7 
+FIFO done_packet = buffer: 1 1 1 1 1 4 1 1 3 1 
+data.size(): 10;  buffer_size: 10; done_packet: 7
+OPT done_packet = buffer: 1 2 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 16
+
+
+BETTA = 5
+23) block: 4 5 7 7 3 3 
+FIFO done_packet = buffer: 1 1 1 1 4 1 1 3 1 4 
+data.size(): 10;  buffer_size: 10; done_packet: 8
+OPT done_packet = buffer: 2 4 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 17
+
+
+BETTA = 5
+24) block: 2 7 2 1 5 7 2 3 4 2 
+FIFO done_packet = buffer: 1 1 1 4 1 1 3 1 4 2 
+data.size(): 10;  buffer_size: 10; done_packet: 9
+OPT done_packet = buffer: 1 4 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 17
+
+
+BETTA = 5
+25) block: 4 4 5 4 7 5 
+FIFO done_packet = buffer: 1 1 4 1 1 3 1 4 2 4 
+data.size(): 10;  buffer_size: 10; done_packet: 10
+OPT done_packet = buffer: 4 4 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 18
+
+
+BETTA = 5
+26) block: 7 6 5 6 7 
+FIFO done_packet = buffer: 1 4 1 1 3 1 4 2 4 7 
+data.size(): 10;  buffer_size: 10; done_packet: 11
+OPT done_packet = buffer: 3 4 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 18
+
+
+BETTA = 5
+27) block: 6 5 7 1 2 3 2 
+FIFO done_packet = buffer: 4 1 1 3 1 4 2 4 6 1 
+data.size(): 10;  buffer_size: 10; done_packet: 12
+OPT done_packet = buffer: 2 4 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 18
+
+
+BETTA = 5
+28) block: 6 2 6 6 
+FIFO done_packet = buffer: 3 1 1 3 1 4 2 4 6 1 
+data.size(): 10;  buffer_size: 10; done_packet: 12
+OPT done_packet = buffer: 1 4 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 18
+
+
+BETTA = 5
+29) block: 6 6 6 
+FIFO done_packet = buffer: 2 1 1 3 1 4 2 4 6 1 
+data.size(): 10;  buffer_size: 10; done_packet: 12
+OPT done_packet = buffer: 4 4 4 4 4 4 5 5 5 6 
+data.size(): 10;  buffer_size: 10; done_packet: 19
+
+
+BETTA = 5
+30) block: 4 1 5 5 5 2 3 4 
+FIFO done_packet = buffer: 1 1 1 3 1 4 2 4 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 12
+OPT done_packet = buffer: 1 3 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 19
+
+
+BETTA = 5
+31) block: 3 5 
+FIFO done_packet = buffer: 1 1 3 1 4 2 4 1 1 3 
+data.size(): 10;  buffer_size: 10; done_packet: 13
+OPT done_packet = buffer: 3 3 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 20
+
+
+BETTA = 5
+32) block: 1 4 6 3 6 1 7 
+FIFO done_packet = buffer: 1 3 1 4 2 4 1 1 3 1 
+data.size(): 10;  buffer_size: 10; done_packet: 14
+OPT done_packet = buffer: 2 3 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 20
+
+
+BETTA = 5
+33) block: 1 6 
+FIFO done_packet = buffer: 3 1 4 2 4 1 1 3 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 15
+OPT done_packet = buffer: 1 3 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 20
+
+
+BETTA = 5
+34) block: 3 4 1 3 
+FIFO done_packet = buffer: 2 1 4 2 4 1 1 3 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 15
+OPT done_packet = buffer: 3 3 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 21
+
+
+BETTA = 5
+35) block: 7 1 6 5 1 
+FIFO done_packet = buffer: 1 1 4 2 4 1 1 3 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 15
+OPT done_packet = buffer: 2 3 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 21
+
+
+BETTA = 5
+36) block: 6 2 1 5 
+FIFO done_packet = buffer: 1 4 2 4 1 1 3 1 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 16
+OPT done_packet = buffer: 1 3 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 21
+
+
+BETTA = 5
+37) block: 2 7 7 6 5 7 
+FIFO done_packet = buffer: 4 2 4 1 1 3 1 1 1 2 
+data.size(): 10;  buffer_size: 10; done_packet: 17
+OPT done_packet = buffer: 2 3 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 22
+
+
+BETTA = 5
+38) block: 5 3 3 4 3 
+FIFO done_packet = buffer: 3 2 4 1 1 3 1 1 1 2 
+data.size(): 10;  buffer_size: 10; done_packet: 17
+OPT done_packet = buffer: 1 3 4 4 4 4 4 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 22
+
+
+BETTA = 5
+39) block: 5 5 3 5 6 
+FIFO done_packet = buffer: 2 2 4 1 1 3 1 1 1 2 
+data.size(): 10;  buffer_size: 10; done_packet: 17
+OPT done_packet = buffer: 3 4 4 4 4 4 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 23
+
+
+BETTA = 5
+40) block: 5 6 
+FIFO done_packet = buffer: 1 2 4 1 1 3 1 1 1 2 
+data.size(): 10;  buffer_size: 10; done_packet: 17
+OPT done_packet = buffer: 2 4 4 4 4 4 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 23
+
+
+BETTA = 5
+41) block: 3 6 2 4 3 6 1 6 
+FIFO done_packet = buffer: 2 4 1 1 3 1 1 1 2 3 
+data.size(): 10;  buffer_size: 10; done_packet: 18
+OPT done_packet = buffer: 1 4 4 4 4 4 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 23
+
+
+BETTA = 5
+42) block: 5 6 4 1 6 7 
+FIFO done_packet = buffer: 1 4 1 1 3 1 1 1 2 3 
+data.size(): 10;  buffer_size: 10; done_packet: 18
+OPT done_packet = buffer: 4 4 4 4 4 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 24
+
+
+BETTA = 5
+43) block: 3 3 3 4 5 
+FIFO done_packet = buffer: 4 1 1 3 1 1 1 2 3 3 
+data.size(): 10;  buffer_size: 10; done_packet: 19
+OPT done_packet = buffer: 3 4 4 4 4 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 24
+
+
+BETTA = 5
+44) block: 3 5 4 6 7 
+FIFO done_packet = buffer: 3 1 1 3 1 1 1 2 3 3 
+data.size(): 10;  buffer_size: 10; done_packet: 19
+OPT done_packet = buffer: 2 4 4 4 4 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 24
+
+
+BETTA = 5
+45) block: 1 1 2 6 7 5 
+FIFO done_packet = buffer: 2 1 1 3 1 1 1 2 3 3 
+data.size(): 10;  buffer_size: 10; done_packet: 19
+OPT done_packet = buffer: 1 4 4 4 4 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 24
+
+
+BETTA = 5
+46) block: 2 1 6 5 1 5 7 2 5 
+FIFO done_packet = buffer: 1 1 1 3 1 1 1 2 3 3 
+data.size(): 10;  buffer_size: 10; done_packet: 19
+OPT done_packet = buffer: 2 4 4 4 4 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 25
+
+
+BETTA = 5
+47) block: 1 6 7 1 5 
+FIFO done_packet = buffer: 1 1 3 1 1 1 2 3 3 1 
+data.size(): 10;  buffer_size: 10; done_packet: 20
+OPT done_packet = buffer: 1 4 4 4 4 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 25
+
+
+BETTA = 5
+48) block: 2 4 1 3 7 4 4 
+FIFO done_packet = buffer: 1 3 1 1 1 2 3 3 1 2 
+data.size(): 10;  buffer_size: 10; done_packet: 21
+OPT done_packet = buffer: 2 4 4 4 4 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 26
+
+
+BETTA = 5
+49) block: 7 4 
+FIFO done_packet = buffer: 3 1 1 1 2 3 3 1 2 7 
+data.size(): 10;  buffer_size: 10; done_packet: 22
+OPT done_packet = buffer: 1 4 4 4 4 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 26
+
+
+BETTA = 5
+50) block: 5 1 7 7 
+FIFO done_packet = buffer: 2 1 1 1 2 3 3 1 2 1 
+data.size(): 10;  buffer_size: 10; done_packet: 22
+OPT done_packet = buffer: 4 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 27
+
+
+BETTA = 5
+51) block: 5 
+FIFO done_packet = buffer: 1 1 1 1 2 3 3 1 2 1 
+data.size(): 10;  buffer_size: 10; done_packet: 22
+OPT done_packet = buffer: 3 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 27
+
+
+BETTA = 5
+52) block: 2 4 2 4 1 6 
+FIFO done_packet = buffer: 1 1 1 2 3 3 1 2 1 2 
+data.size(): 10;  buffer_size: 10; done_packet: 23
+OPT done_packet = buffer: 2 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 27
+
+BETTA = 5
+53) block: 7 1 2 2 
+FIFO done_packet = buffer: 1 1 2 3 3 1 2 1 2 1 
+data.size(): 10;  buffer_size: 10; done_packet: 24
+OPT done_packet = buffer: 1 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 27
+
+
+BETTA = 5
+54) block: 4 7 2 4 5 3 4 
+FIFO done_packet = buffer: 1 2 3 3 1 2 1 2 1 4 
+data.size(): 10;  buffer_size: 10; done_packet: 25
+OPT done_packet = buffer: 4 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 28
+
+
+BETTA = 5
+55) block: 6 2 2 2 5 7 
+FIFO done_packet = buffer: 2 3 3 1 2 1 2 1 4 6 
+data.size(): 10;  buffer_size: 10; done_packet: 26
+OPT done_packet = buffer: 3 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 28
+
+
+BETTA = 5
+56) block: 1 1 1 2 5 6 4 7 
+FIFO done_packet = buffer: 1 3 3 1 2 1 2 1 4 1 
+data.size(): 10;  buffer_size: 10; done_packet: 26
+OPT done_packet = buffer: 2 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 28
+
+
+BETTA = 5
+57) block: 4 1 6 1 
+FIFO done_packet = buffer: 3 3 1 2 1 2 1 4 1 4 
+data.size(): 10;  buffer_size: 10; done_packet: 27
+OPT done_packet = buffer: 1 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 28
+
+
+BETTA = 5
+58) block: 4 5 2 2 1 1 3 2 
+FIFO done_packet = buffer: 2 3 1 2 1 2 1 4 1 4 
+data.size(): 10;  buffer_size: 10; done_packet: 27
+OPT done_packet = buffer: 4 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 29
+
+
+BETTA = 5
+59) block: 3 3 7 
+FIFO done_packet = buffer: 1 3 1 2 1 2 1 4 1 4 
+data.size(): 10;  buffer_size: 10; done_packet: 27
+OPT done_packet = buffer: 3 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 29
+
+
+BETTA = 5
+60) block: 1 5 4 1 5 
+FIFO done_packet = buffer: 3 1 2 1 2 1 4 1 4 1 
+data.size(): 10;  buffer_size: 10; done_packet: 28
+OPT done_packet = buffer: 2 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 29
+
+
+BETTA = 5
+61) block: 7 5 3 7 3 5 
+FIFO done_packet = buffer: 2 1 2 1 2 1 4 1 4 1 
+data.size(): 10;  buffer_size: 10; done_packet: 28
+OPT done_packet = buffer: 1 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 29
+
+
+BETTA = 5
+62) block: 2 3 6 7 4 
+FIFO done_packet = buffer: 1 1 2 1 2 1 4 1 4 1 
+data.size(): 10;  buffer_size: 10; done_packet: 28
+OPT done_packet = buffer: 2 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 30
+
+
+BETTA = 5
+63) block: 1 3 7 
+FIFO done_packet = buffer: 1 2 1 2 1 4 1 4 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 29
+OPT done_packet = buffer: 1 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 30
+
+
+BETTA = 5
+64) block: 1 4 4 7 
+FIFO done_packet = buffer: 2 1 2 1 4 1 4 1 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 30
+OPT done_packet = buffer: 1 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 31
+
+
+BETTA = 5
+65) block: 7 1 7 6 2 
+FIFO done_packet = buffer: 1 1 2 1 4 1 4 1 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 30
+OPT done_packet = buffer: 1 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 32
+
+
+BETTA = 5
+66) block: 4 7 3 
+FIFO done_packet = buffer: 1 2 1 4 1 4 1 1 1 4 
+data.size(): 10;  buffer_size: 10; done_packet: 31
+OPT done_packet = buffer: 4 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 33
+
+
+BETTA = 5
+67) block: 6 6 1 5 
+FIFO done_packet = buffer: 2 1 4 1 4 1 1 1 4 1 
+data.size(): 10;  buffer_size: 10; done_packet: 32
+OPT done_packet = buffer: 3 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 33
+
+
+BETTA = 5
+68) block: 1 
+FIFO done_packet = buffer: 1 1 4 1 4 1 1 1 4 1 
+data.size(): 10;  buffer_size: 10; done_packet: 32
+OPT done_packet = buffer: 2 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 33
+
+
+BETTA = 5
+69) block: 5 6 1 5 
+FIFO done_packet = buffer: 1 4 1 4 1 1 1 4 1 5 
+data.size(): 10;  buffer_size: 10; done_packet: 33
+OPT done_packet = buffer: 1 4 4 4 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 33
+
+
+BETTA = 5
+70) block: 5 4 5 
+FIFO done_packet = buffer: 4 1 4 1 1 1 4 1 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 34
+OPT done_packet = buffer: 4 4 4 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 34
+
+
+BETTA = 5
+71) block: 4 4 5 4 6 1 4 3 2 
+FIFO done_packet = buffer: 3 1 4 1 1 1 4 1 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 34
+OPT done_packet = buffer: 3 4 4 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 34
+
+
+BETTA = 5
+72) block: 3 1 7 1 
+FIFO done_packet = buffer: 2 1 4 1 1 1 4 1 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 34
+OPT done_packet = buffer: 2 4 4 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 34
+
+
+BETTA = 5
+73) block: 5 1 6 
+FIFO done_packet = buffer: 1 1 4 1 1 1 4 1 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 34
+OPT done_packet = buffer: 1 4 4 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 34
+
+
+BETTA = 5
+74) block: 3 7 6 3 5 
+FIFO done_packet = buffer: 1 4 1 1 1 4 1 5 5 3 
+data.size(): 10;  buffer_size: 10; done_packet: 35
+OPT done_packet = buffer: 3 4 4 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 35
+
+
+BETTA = 5
+75) block: 6 1 3 7 7 3 
+FIFO done_packet = buffer: 4 1 1 1 4 1 5 5 3 1 
+data.size(): 10;  buffer_size: 10; done_packet: 36
+OPT done_packet = buffer: 2 4 4 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 35
+
+
+BETTA = 5
+76) block: 7 6 4 
+FIFO done_packet = buffer: 3 1 1 1 4 1 5 5 3 1 
+data.size(): 10;  buffer_size: 10; done_packet: 36
+OPT done_packet = buffer: 1 4 4 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 35
+
+
+BETTA = 5
+77) block: 6 1 4 2 
+FIFO done_packet = buffer: 2 1 1 1 4 1 5 5 3 1 
+data.size(): 10;  buffer_size: 10; done_packet: 36
+OPT done_packet = buffer: 1 4 4 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 36
+
+
+BETTA = 5
+78) block: 5 1 7 1 5 
+FIFO done_packet = buffer: 1 1 1 1 4 1 5 5 3 1 
+data.size(): 10;  buffer_size: 10; done_packet: 36
+OPT done_packet = buffer: 4 4 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 37
+
+
+BETTA = 5
+79) block: 6 2 3 4 1 1 
+FIFO done_packet = buffer: 1 1 1 4 1 5 5 3 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 37
+OPT done_packet = buffer: 3 4 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 37
+
+BETTA = 5
+80) block: 1 1 5 1 6 7 7 4 2 2 4 
+FIFO done_packet = buffer: 1 1 4 1 5 5 3 1 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 38
+OPT done_packet = buffer: 2 4 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 37
+
+
+BETTA = 5
+81) block: 1 4 
+FIFO done_packet = buffer: 1 4 1 5 5 3 1 1 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 39
+OPT done_packet = buffer: 1 4 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 37
+
+
+BETTA = 5
+82) block: 6 5 4 
+FIFO done_packet = buffer: 4 1 5 5 3 1 1 1 1 6 
+data.size(): 10;  buffer_size: 10; done_packet: 40
+OPT done_packet = buffer: 4 5 5 5 5 5 5 5 5 6 
+data.size(): 10;  buffer_size: 10; done_packet: 38
+
+
+BETTA = 5
+83) block: 4 2 4 4 
+FIFO done_packet = buffer: 3 1 5 5 3 1 1 1 1 6 
+data.size(): 10;  buffer_size: 10; done_packet: 40
+OPT done_packet = buffer: 3 5 5 5 5 5 5 5 5 6 
+data.size(): 10;  buffer_size: 10; done_packet: 38
+
+
+BETTA = 5
+84) block: 6 7 6 
+FIFO done_packet = buffer: 2 1 5 5 3 1 1 1 1 6 
+data.size(): 10;  buffer_size: 10; done_packet: 40
+OPT done_packet = buffer: 2 5 5 5 5 5 5 5 5 6 
+data.size(): 10;  buffer_size: 10; done_packet: 38
+
+
+BETTA = 5
+85) block: 4 5 4 4 1 5 5 7 1 
+FIFO done_packet = buffer: 1 1 5 5 3 1 1 1 1 1 
+data.size(): 10;  buffer_size: 10; done_packet: 40
+OPT done_packet = buffer: 1 1 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 38
+
+
+BETTA = 5
+86) block: 5 3 2 2 1 
+FIFO done_packet = buffer: 1 5 5 3 1 1 1 1 1 5 
+data.size(): 10;  buffer_size: 10; done_packet: 41
+OPT done_packet = buffer: 1 5 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 39
+
+
+BETTA = 5
+87) block: 7 3 4 4 3 
+FIFO done_packet = buffer: 5 5 3 1 1 1 1 1 5 7 
+data.size(): 10;  buffer_size: 10; done_packet: 42
+OPT done_packet = buffer: 5 5 5 5 5 5 5 5 5 7 
+data.size(): 10;  buffer_size: 10; done_packet: 40
+
+
+BETTA = 5
+88) block: 3 2 4 
+FIFO done_packet = buffer: 4 5 3 1 1 1 1 1 5 7 
+data.size(): 10;  buffer_size: 10; done_packet: 42
+OPT done_packet = buffer: 4 5 5 5 5 5 5 5 5 7 
+data.size(): 10;  buffer_size: 10; done_packet: 40
+
+
+BETTA = 5
+89) block: 1 
+FIFO done_packet = buffer: 3 5 3 1 1 1 1 1 5 1 
+data.size(): 10;  buffer_size: 10; done_packet: 42
+OPT done_packet = buffer: 1 3 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 40
+
+
+BETTA = 5
+90) block: 2 7 2 6 4 1 7 
+FIFO done_packet = buffer: 2 5 3 1 1 1 1 1 5 1 
+data.size(): 10;  buffer_size: 10; done_packet: 42
+OPT done_packet = buffer: 2 3 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 41
+
+
+BETTA = 5
+91) block: 5 3 4 
+FIFO done_packet = buffer: 1 5 3 1 1 1 1 1 5 1 
+data.size(): 10;  buffer_size: 10; done_packet: 42
+OPT done_packet = buffer: 1 3 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 41
+
+
+BETTA = 5
+92) block: 4 2 7 5 6 3 
+FIFO done_packet = buffer: 5 3 1 1 1 1 1 5 1 4 
+data.size(): 10;  buffer_size: 10; done_packet: 43
+OPT done_packet = buffer: 3 4 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 42
+
+
+BETTA = 5
+93) block: 7 6 7 5 3 4 5 7 6 6 4 
+FIFO done_packet = buffer: 4 3 1 1 1 1 1 5 1 4 
+data.size(): 10;  buffer_size: 10; done_packet: 43
+OPT done_packet = buffer: 2 4 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 42
+
+
+BETTA = 5
+94) block: 2 4 1 1 7 2 
+FIFO done_packet = buffer: 3 3 1 1 1 1 1 5 1 4 
+data.size(): 10;  buffer_size: 10; done_packet: 43
+OPT done_packet = buffer: 1 4 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 42
+
+
+BETTA = 5
+95) block: 7 1 5 1 
+FIFO done_packet = buffer: 2 3 1 1 1 1 1 5 1 4 
+data.size(): 10;  buffer_size: 10; done_packet: 43
+OPT done_packet = buffer: 1 4 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 43
+
+
+BETTA = 5
+96) block: 4 4 3 4 3 3 6 
+FIFO done_packet = buffer: 1 3 1 1 1 1 1 5 1 4 
+data.size(): 10;  buffer_size: 10; done_packet: 43
+OPT done_packet = buffer: 4 4 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 44
+
+
+BETTA = 5
+97) block: 1 3 
+FIFO done_packet = buffer: 3 1 1 1 1 1 5 1 4 1 
+data.size(): 10;  buffer_size: 10; done_packet: 44
+OPT done_packet = buffer: 3 4 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 44
+
+
+BETTA = 5
+98) block: 3 1 2 3 4 
+FIFO done_packet = buffer: 2 1 1 1 1 1 5 1 4 1 
+data.size(): 10;  buffer_size: 10; done_packet: 44
+OPT done_packet = buffer: 2 4 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 44
+NOTPUSH done_packet = buffer is empty
+NOTDEL done_packet = buffer: 1 1 1 1 1 1 1 4 1 3 
+data.size(): 10;  buffer_size: 10; done_packet: 33
+
+BETTA = 5
+99) block: 2 5 6 5 7 5 
+FIFO done_packet = buffer: 1 1 1 1 1 1 5 1 4 1 
+data.size(): 10;  buffer_size: 10; done_packet: 44
+OPT done_packet = buffer: 1 4 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 44
+
+
+BETTA = 5
+100) block: 4 2 3 4 3 7 3 2 3 6 7 
+FIFO done_packet = buffer: 1 1 1 1 1 5 1 4 1 4 
+data.size(): 10;  buffer_size: 10; done_packet: 45
+OPT done_packet = buffer: 4 4 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 45
+
+
+BETTA = 5
+101) block: 2 6 3 7 6 2 1 6 7 4 3 
+FIFO done_packet = buffer: 1 1 1 1 5 1 4 1 4 2 
+data.size(): 10;  buffer_size: 10; done_packet: 46
+OPT done_packet = buffer: 3 4 5 5 5 5 5 5 5 5 
+data.size(): 10;  buffer_size: 10; done_packet: 45
