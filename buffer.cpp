@@ -1,7 +1,4 @@
 #include <iostream>
-// #include <algorithm>
-// #include <iterator>
-
 
 #include "buffer.h"
 #include "block.h"
@@ -138,7 +135,7 @@ void buffer::cpu_action ()
 void buffer::cpu_action_frontone_extract ()
 {
 	size_t power = CPU_power;
-	for (std::list<size_t>::iterator it = data.begin(); (it != data.end()) && (power > 0); /*++it*/)
+	for (std::list<size_t>::iterator it = data.begin(); (it != data.end()) && (power > 0); )
 	{
 		if (*it == 1)
 		{
@@ -174,7 +171,7 @@ void buffer::cpu_action_allone_extract ()
 	}
 	if (deletable > 0)
 	{
-		for (std::list<size_t>::iterator it = data.begin(); (it != data.end()) && (deletable > 0) && (power > 0); /*++it*/)
+		for (std::list<size_t>::iterator it = data.begin(); (it != data.end()) && (deletable > 0) && (power > 0); )
 		{
 			data.pop_front();
 			++done_packet;

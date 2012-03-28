@@ -8,7 +8,8 @@ enum DISTRIBUTION_TYPE
 	CONST,
 	UNIFORM,
 	NORMAL,
-	POISSON
+	POISSON,
+	BURST
 };
 
 class block

@@ -3,8 +3,6 @@
 
 #include <list>
 
-// #include "block.h"
-
 class block;
 
 enum BUFFER_TYPE

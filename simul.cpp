@@ -89,6 +89,10 @@ std::tuple<size_t, size_t, size_t, size_t> Test_done_packets (
  	boost::poisson_distribution<int> poisson (lambda);
  	boost::variate_generator<boost::mt19937&, boost::poisson_distribution<int> > 
  																		poisson_gener(gen, poisson);
+ 	/*Normal distribution*/
+ 	boost::normal_distribution<double> normal(max_size_block, std::sqrt(max_size_block));
+	boost::variate_generator<boost::mt19937&, boost::normal_distribution<double> > burst_gener(gen, normal);
+
 	for (int i = 0; i < iteration_number; ++i)
 	{	
 		size_t block_size = 0;
@@ -103,6 +107,13 @@ std::tuple<size_t, size_t, size_t, size_t> Test_done_packets (
 			case POISSON : 
 			{
 				block_size = poisson_gener();
+				break;
+			}
+			case BURST : 
+			{
+				block_size = burst_gener();
+				if (block_size > max_size_block || block_size < 0)
+					block_size = 0;
 				break;
 			}
 		}		
@@ -235,12 +246,60 @@ void PoissonTest (int max_value_lambda)
 	}
 }
 
+
+void BurstTest ()
+{
+	DISTRIBUTION_TYPE block_size_distribution = BURST;
+	size_t buffer_size = 10;
+	size_t CPU_power = 1;
+	size_t max_value_CPU_power = 1;
+	size_t betta = 1;
+	size_t max_value_betta = 1;
+
+	size_t iteration_number = 3000;
+
+	size_t max_size_block = 50;
+	size_t max_value_in_block = 7;
+
+	size_t done_fifo = 0;
+	size_t done_opt = 0;
+	size_t done_notpush = 0;
+	size_t done_notdel = 0;
+
+	std::ofstream burst_test ("burst_test.csv");
+	burst_test<< "block_size_distribution = " << "BURST" << std::endl;
+	burst_test<< "buffer_size = " << buffer_size << std::endl;
+	burst_test<< "max_size_block = " << max_size_block << std::endl;
+	burst_test<< "iteration_number = " << iteration_number << std::endl;
+	burst_test<< "CPU_power" << ";" << "Betta" << ";" << "FIFO" << ";" 
+				<< "OPT" << ";" << "NOTPUSH" << ";" << "NOTDEL" << std::endl;
+
+	for (int i = 1; i <= max_value_CPU_power; ++i)
+	{
+		for (int j = 1; j <= max_value_betta; ++j)
+		{
+			std::tuple<size_t, size_t, size_t, size_t> test_tuple = Test_done_packets (
+											block_size_distribution, buffer_size, CPU_power, betta,
+											iteration_number, max_size_block, max_value_in_block);
+
+			std::tie (done_fifo, done_opt, done_notpush, done_notdel) = test_tuple;
+			burst_test<< CPU_power << ";" <<betta << ";" << done_fifo << ";" 
+						<< done_opt << ";" << done_notpush << ";" << done_notdel << std::endl;
+			
+			++betta;
+		}
+		++CPU_power;
+		betta = 1;
+	}
+}
+
 int main()
 {
 
 	//UniformTest ();
-	int max_value_lambda = 5;
-	PoissonTest (max_value_lambda);
+	// int max_value_lambda = 5;
+	// PoissonTest (max_value_lambda);
+	//BurstTest();
 
 	return 0;
 }
