@@ -4,7 +4,7 @@
 #include "block.h"
 
 
-buffer::buffer (size_t size = 1, BUFFER_TYPE type = FIFO, size_t CPU_power = 1, size_t betta = 1) : 
+buffer::buffer (size_t size = 1, BUFFER_TYPE type = FIFO, size_t CPU_power = 1, double betta = 1) : 
 	buffer_size (size),
 	type (type),
 	done_packet (0),

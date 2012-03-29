@@ -22,11 +22,11 @@ public:
 	size_t done_packet;
 	//size_t done_weight;
 	const size_t CPU_power;
-	const size_t betta;
+	const double betta;
 	size_t deletable;
 
 public:
-	buffer (size_t size, BUFFER_TYPE type, size_t CPU_power, size_t betta);
+	buffer (size_t size, BUFFER_TYPE type, size_t CPU_power, double betta);
 	bool is_empty ();
 	size_t maximum ();
 	void delete_left_maximum ();
