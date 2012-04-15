@@ -15,7 +15,7 @@
 #include "block.h"
 
 
-block::block (size_t size = 0, size_t max_value = 1, DISTRIBUTION_TYPE distribution = CONST) :
+block::block (size_t size = 0, size_t max_value = 1, DISTRIBUTION_TYPE distribution = UNIFORM) :
 	block_size (size),
 	max_elem (max_value)
 {
@@ -24,11 +24,11 @@ block::block (size_t size = 0, size_t max_value = 1, DISTRIBUTION_TYPE distribut
 	
 	switch (distribution)
 	{
-		case CONST :
-		{
-			std::fill_n(std::back_insert_iterator<std::list<size_t> >(data), block_size, max_elem);
-			break;
-		}
+		// case CONST :
+		// {
+		// 	std::fill_n(std::back_insert_iterator<std::list<size_t> >(data), block_size, max_elem);
+		// 	break;
+		// }
 
 		case UNIFORM :
 		{
@@ -37,13 +37,13 @@ block::block (size_t size = 0, size_t max_value = 1, DISTRIBUTION_TYPE distribut
 			std::generate_n(std::back_insert_iterator<std::list<size_t> >(data), block_size, gener);
 			break;
 		}
-		case NORMAL :
-		{
-			boost::normal_distribution<double> normal((max_elem / 2), 1);
-			boost::variate_generator<boost::mt19937&, boost::normal_distribution<double> > gener(gen, normal);
-			std::generate_n(std::back_insert_iterator<std::list<size_t> >(data), block_size, gener);
-			break;
-		}
+		// case NORMAL :
+		// {
+		// 	boost::normal_distribution<double> normal((max_elem / 2), 1);
+		// 	boost::variate_generator<boost::mt19937&, boost::normal_distribution<double> > gener(gen, normal);
+		// 	std::generate_n(std::back_insert_iterator<std::list<size_t> >(data), block_size, gener);
+		// 	break;
+		// }
 		case POISSON :
 		{
 			const int lambda = 1;
